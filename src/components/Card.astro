@@ -1,0 +1,25 @@
+---
+import cx from "../utils/cx";
+
+interface Props {
+  text: string;
+  className?: string;
+}
+
+const { text, className } = Astro.props;
+
+const styles = {
+  icon: cx("p-2 rounded-2xl"),
+} as any;
+---
+
+<div
+  class="flex flex-col justify-center gap-2 items-center border border-gray-300 rounded-3xl shadow-md py-5 px-2"
+>
+  <div class={`${styles.icon} ${className}`}>
+    <slot />
+  </div>
+  <span class="text-center text-sm font-medium font-inter flex-grow">
+    {text}
+  </span>
+</div>

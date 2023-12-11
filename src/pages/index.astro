@@ -1,0 +1,160 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import Arrow from "../components/icons/Arrow.astro";
+import Menu from "../components/icons/Menu.astro";
+import Navbar from "../components/Navbar.astro";
+import Cube from "../components/icons/Cube.astro";
+import Card from "../components/Card.astro";
+import Users from "../components/Users.astro";
+import Accsesible from "../components/icons/Accsesible.astro";
+import CreditCard from "../components/icons/CreditCard.astro";
+import Book from "../components/icons/Book.astro";
+import Rating from "../components/Rating.astro";
+---
+
+<Layout title="Notion desde Cero.">
+  <header class="flex justify-between items-center px-4 py-4">
+    <div class="flex gap-2 items-center">
+      <img src="/notion.svg" alt="notion icon" width="32" />
+      <span class="font-semibold text-black-text font-inter"
+        >Notion Venezuela</span
+      >
+    </div>
+    <button id="menu">
+      <Menu class="" />
+    </button>
+    <!-- <Navbar /> -->
+  </header>
+
+  <main class="flex flex-col gap-14 py-7 relative h-auto px-4">
+    <!-- Initial Hero -->
+    <div class="flex flex-col items-center gap-4">
+      <img src="/notion.svg" alt="notion icon" width="50" />
+      <div class="flex flex-col items-center gap-2">
+        <h1 class="text-4xl font-bold text-black-text font-inter">
+          Notion desde cero
+        </h1>
+        <span
+          class="text-md text-center w-11/12 font-medium text-black-text opacity-95 leading-5 font-inter"
+          >Aprende a usar Notion para organizar tu vida y trabajo.</span
+        >
+      </div>
+      <Button title="Ver lecciones" href="#">
+        <Arrow slot="right" />
+         Ver lecciones
+      </Button>
+    </div>
+
+    <!-- Users list -->
+    <div class="flex flex-col items-center gap-2">
+      <Users />
+      <span class="text-sm font-inter font-medium">
+        + 42 personas están aprendiendo Notion.</span
+      >
+
+      <Rating />
+    </div>
+
+    <!-- About -->
+    <div class="flex flex-col gap-4">
+      <h2 class="text-2xl font-inter font-bold text-black-text text-center">
+        Ayudando a contruir nuevas habilidades y experiencias.
+      </h2>
+
+      <div class="grid grid-cols-2 gap-2">
+        <Card
+          text="Accesible desde cualquier dispositivo"
+          className="bg-red-300"
+        >
+          <Accsesible className="h-10 w-10 stroke-red-600" />
+        </Card>
+        <Card text="Modular y fácil de usar" className="bg-yellow-300">
+          <Cube className="h-10 w-10 stroke-yellow-600" />
+        </Card>
+        <Card text="Metodos de pago cómodos" className="bg-blue-300">
+          <CreditCard className="h-10 w-10 stroke-blue-600" />
+        </Card>
+        <Card text="Aprende a tu ritmo y a tu tiempo" className="bg-green-300">
+          <Book className="h-10 w-10 stroke-green-600" />
+        </Card>
+      </div>
+    </div>
+
+    <!-- Notion for x -->
+    <div class="grid grid-cols-2 items-center gap-x-2 gap-y-8">
+      <img class="col-start-1" src="/startups-hero.png" alt="startups" />
+      <div class="col-start-2 row-start-1 flex flex-col gap-2">
+        <h2 class="text-2xl font-inter font-bold text-black-text text-center">
+          Notion para creativos
+        </h2>
+        <p class="font-inter font-semibold text-xs">
+          Espacios especializados para creativos de todo tipo, donde puedes
+          gestironar tus proyectos y creacioón de contenido.
+        </p>
+      </div>
+
+      <img
+        class="col-start-2 row-start-2"
+        src="/enterprise-hero.png"
+        alt="startups"
+      />
+      <div class="col-start-1 flex flex-col gap-2">
+        <h2 class="text-2xl font-inter font-bold text-black-text text-center">
+          Proyectos personales
+        </h2>
+        <p class="font-inter font-semibold text-xs">
+          Aprende a llevar todos tus proyectos personales en un solo lugar, deja
+          de pensar tanto y usa Notion.
+        </p>
+      </div>
+
+      <img class="col-start-1" src="/teams-hero.png" alt="startups" />
+      <div class="col-start-2 flex flex-col gap-2">
+        <h2 class="text-2xl font-inter font-bold text-black-text text-center">
+          Inteligencia artificial
+        </h2>
+        <p class="font-inter font-semibold text-xs">
+          Trabaja más rápido y escribe mejor. Más conocimiento, ideas y
+          respuestas a un solo click de distancia.
+        </p>
+      </div>
+    </div>
+
+    <!-- About instructor -->
+    <div class="flex flex-col gap-4">
+      <h2 class="text-2xl font-inter font-bold text-black-text text-center">
+        Conoce a tu instructor
+      </h2>
+
+      <div class="flex flex-col items-center gap-4">
+        <img
+          src="/public/javier-pic.jpg"
+          alt="javier profile"
+          class="w-24 rounded-full"
+        />
+        <div class="flex flex-col gap-2 items-center">
+          <a
+            class="text-3xl font-inter relative font-bold text-black-text text-center after:content-link after:absolute after:-right-5 after:-top-3
+          after:text-black-text"
+            href="https://www.instagram.com/javierrodriguez17/"
+          >
+            Javier Rodriguez
+          </a>
+          <span class="text-gray-700 font-medium text-sm text-center"
+            >Diseñador Gráfico, director creativo de <a
+              class="underline underline-offset-1"
+              href="">Nativo Studio</a
+            > y Embajador de Notion en Venezuela.</span
+          >
+        </div>
+
+        <img
+          src="/public/paper-airplane.png"
+          alt="paper airplane"
+          class="w-1/2 mx-auto"
+        />
+      </div>
+    </div>
+  </main>
+</Layout>
