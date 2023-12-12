@@ -11,10 +11,11 @@ import Accsesible from "../components/icons/Accsesible.astro";
 import CreditCard from "../components/icons/CreditCard.astro";
 import Book from "../components/icons/Book.astro";
 import Rating from "../components/Rating.astro";
+import Arrows from "../components/icons/Arrows.astro";
 ---
 
 <Layout title="Notion desde Cero.">
-  <header class="flex justify-between items-center px-4 py-4 tablet/sm:px-10">
+  <header class="flex justify-between items-center px-4 py-4 tablet/sm:px-10 laptop/lg:px-96">
     <div class="flex gap-2 items-center">
       <img src="/notion.svg" alt="notion icon" width="32" />
       <span class="font-semibold text-black-text font-inter"
@@ -27,7 +28,7 @@ import Rating from "../components/Rating.astro";
     <!-- <Navbar /> -->
   </header>
 
-  <main class="flex flex-col gap-14 py-7 relative h-auto px-4 tablet/sm:px-10 laptop/sm:px-72">
+  <main class="flex flex-col gap-14 py-7 relative h-auto px-4 tablet/sm:px-10 laptop/sm:px-72 laptop/lg:px-96">
     <!-- Initial Hero -->
     <div class="flex flex-col items-center gap-4">
       <img src="/notion.svg" alt="notion icon" class="w-14 tablet/sm:w-20" />
@@ -51,7 +52,7 @@ import Rating from "../components/Rating.astro";
     <!-- Users list -->
     <div class="flex flex-col items-center gap-2">
       <Users />
-      <span class="text-sm font-inter font-medium">
+      <span class="text-sm font-inter font-medium tablet/sm:text-base">
         + 42 personas están aprendiendo Notion.</span
       >
 
@@ -59,44 +60,24 @@ import Rating from "../components/Rating.astro";
     </div>
 
     <!-- About -->
-    <div class="flex flex-col gap-4 tablet/sm:gap-6 bg-gray-200 p-4 rounded-xl items-center">
-      <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-3xl tablet/sm:w-4/5">
-        Ayudando a contruir nuevas habilidades y experiencias.
-      </h2>
+    <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl laptop/sm:w-10/12 mx-auto">
+      Ayudando a contruir nuevas habilidades y experiencias.
+    </h2>
+    <div class="flex flex-col gap-8 tablet/sm:gap-6 bg-[#f6f5f4] p-6 rounded-xl relative mt-16">
+      <img class="absolute w-32 -top-20 right-10 tablet/sm:w-48 tablet/sm:-top-[124px] tablet/sm:right-10" src="/topPeekJ.png" alt="peek">
+      <div class="flex flex-col gap-2">
+        <Arrows />
+        <div class="flex flex-col">
+          <h3 class="font-inter text-[#050505] font-semibold text-lg">Visualize, filter & sort any way you want</h3>
+          <span class="block font-inter text-black-text">
+            Show only tasks assigned to you, or items marked as urgent. Break down any project in the way that’s most helpful to you.
+          </span>
+        </div>
+      </div>
 
-      <img class="rounded-lg" src="/public/hr.png" alt="notion page">
+      <img class="rounded-lg border border-gray-200 shadow-sm" src="/hr.png" alt="notion page">
     </div>
-    <!-- <div class="grid grid-cols-2 gap-2 tablet/sm:gap-0 items-center justify-items-center ">
-      <Card
-        title="Accesible"
-        text="Accesible desde cualquier dispositivo"
-        className="bg-red-300 w-[60%] tablet/sm:w-[20%]"
-      >
-        <Accsesible className="h-full w-full stroke-red-600" />
-      </Card>
-      <Card
-        title="Modular"
-        text="Modular y fácil de usar"
-        className="bg-yellow-300 w-[60%] tablet/sm:w-[20%]"
-      >
-        <Cube className="h-full w-full stroke-yellow-600" />
-      </Card>
-      <Card
-        title="Cómodo"
-        text="Metodos de pago cómodos"
-        className="bg-blue-300 w-[60%] tablet/sm:w-[20%]"
-      >
-        <CreditCard className="h-full w-full stroke-blue-600" />
-      </Card>
-      <Card
-        title="A tu ritmo"
-        text="Aprende a tu ritmo y a tu tiempo"
-        className="bg-green-300 w-[60%] tablet/sm:w-[20%]"
-      >
-        <Book className="h-full w-full stroke-green-600" />
-      </Card>
-    </div> -->
-
+    
     <!-- Notion for x -->
     <div class="grid grid-cols-2 items-center gap-x-2 gap-y-8 justify-items-center">
       <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%]" src="/startups-hero.png" alt="startups" />
@@ -139,15 +120,15 @@ import Rating from "../components/Rating.astro";
 
     <!-- About instructor -->
     <div class="flex flex-col gap-4">
-      <h2 class="text-2xl font-inter font-bold text-black-text text-center">
+      <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
         Conoce a tu instructor
       </h2>
 
-      <div class="flex flex-col items-center gap-4">
+      <div class="flex flex-col items-center gap-8">
         <img
           src="/javier-pic.jpg"
           alt="javier profile"
-          class="w-24 rounded-full"
+          class="w-24 rounded-full tablet/sm:w-32 hover:rotate-[10deg] transition-all duration-300"
         />
         <div class="flex flex-col gap-2 items-center">
           <a
@@ -157,7 +138,7 @@ import Rating from "../components/Rating.astro";
           >
             Javier Rodriguez
           </a>
-          <span class="text-gray-700 font-medium text-sm text-center"
+          <span class="text-black-text font-medium text-sm text-center tablet/sm:text-xl"
             >Diseñador Gráfico, director creativo de <a
               class="underline underline-offset-1"
               href="https://www.instagram.com/nativo.studio/">Nativo Studio</a
