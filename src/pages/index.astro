@@ -14,7 +14,7 @@ import Rating from "../components/Rating.astro";
 ---
 
 <Layout title="Notion desde Cero.">
-  <header class="flex justify-between items-center px-4 py-4">
+  <header class="flex justify-between items-center px-4 py-4 tablet/sm:px-10">
     <div class="flex gap-2 items-center">
       <img src="/notion.svg" alt="notion icon" width="32" />
       <span class="font-semibold text-black-text font-inter"
@@ -27,16 +27,18 @@ import Rating from "../components/Rating.astro";
     <!-- <Navbar /> -->
   </header>
 
-  <main class="flex flex-col gap-14 py-7 relative h-auto px-4">
+  <main class="flex flex-col gap-14 py-7 relative h-auto px-4 tablet/sm:px-10 laptop/sm:px-72">
     <!-- Initial Hero -->
     <div class="flex flex-col items-center gap-4">
-      <img src="/notion.svg" alt="notion icon" width="50" />
+      <img src="/notion.svg" alt="notion icon" class="w-14 tablet/sm:w-20" />
       <div class="flex flex-col items-center gap-2">
-        <h1 class="text-4xl font-bold text-black-text font-inter">
+        <h1
+          class="text-4xl font-bold text-black-text font-inter tablet/sm:text-5xl"
+        >
           Notion desde cero
         </h1>
         <span
-          class="text-md text-center w-11/12 font-medium text-black-text opacity-95 leading-5 font-inter"
+          class="text-md text-center w-11/12 font-medium text-black-text opacity-95 leading-5 font-inter tablet/sm:text-lg"
           >Aprende a usar Notion para organizar tu vida y trabajo.</span
         >
       </div>
@@ -57,64 +59,78 @@ import Rating from "../components/Rating.astro";
     </div>
 
     <!-- About -->
-    <div class="flex flex-col gap-4">
-      <h2 class="text-2xl font-inter font-bold text-black-text text-center">
+    <div class="flex flex-col gap-4 tablet/sm:gap-6 bg-gray-200 p-4 rounded-xl items-center">
+      <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-3xl tablet/sm:w-4/5">
         Ayudando a contruir nuevas habilidades y experiencias.
       </h2>
 
-      <div class="grid grid-cols-2 gap-2">
-        <Card
-          text="Accesible desde cualquier dispositivo"
-          className="bg-red-300"
-        >
-          <Accsesible className="h-10 w-10 stroke-red-600" />
-        </Card>
-        <Card text="Modular y fácil de usar" className="bg-yellow-300">
-          <Cube className="h-10 w-10 stroke-yellow-600" />
-        </Card>
-        <Card text="Metodos de pago cómodos" className="bg-blue-300">
-          <CreditCard className="h-10 w-10 stroke-blue-600" />
-        </Card>
-        <Card text="Aprende a tu ritmo y a tu tiempo" className="bg-green-300">
-          <Book className="h-10 w-10 stroke-green-600" />
-        </Card>
-      </div>
+      <img class="rounded-lg" src="/public/hr.png" alt="notion page">
     </div>
+    <!-- <div class="grid grid-cols-2 gap-2 tablet/sm:gap-0 items-center justify-items-center ">
+      <Card
+        title="Accesible"
+        text="Accesible desde cualquier dispositivo"
+        className="bg-red-300 w-[60%] tablet/sm:w-[20%]"
+      >
+        <Accsesible className="h-full w-full stroke-red-600" />
+      </Card>
+      <Card
+        title="Modular"
+        text="Modular y fácil de usar"
+        className="bg-yellow-300 w-[60%] tablet/sm:w-[20%]"
+      >
+        <Cube className="h-full w-full stroke-yellow-600" />
+      </Card>
+      <Card
+        title="Cómodo"
+        text="Metodos de pago cómodos"
+        className="bg-blue-300 w-[60%] tablet/sm:w-[20%]"
+      >
+        <CreditCard className="h-full w-full stroke-blue-600" />
+      </Card>
+      <Card
+        title="A tu ritmo"
+        text="Aprende a tu ritmo y a tu tiempo"
+        className="bg-green-300 w-[60%] tablet/sm:w-[20%]"
+      >
+        <Book className="h-full w-full stroke-green-600" />
+      </Card>
+    </div> -->
 
     <!-- Notion for x -->
-    <div class="grid grid-cols-2 items-center gap-x-2 gap-y-8">
-      <img class="col-start-1" src="/startups-hero.png" alt="startups" />
+    <div class="grid grid-cols-2 items-center gap-x-2 gap-y-8 justify-items-center">
+      <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%]" src="/startups-hero.png" alt="startups" />
       <div class="col-start-2 row-start-1 flex flex-col gap-2">
-        <h2 class="text-2xl font-inter font-bold text-black-text text-center">
+        <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
           Notion para creativos
         </h2>
-        <p class="font-inter font-semibold text-xs">
+        <p class="font-inter font-semibold text-xs text-center tablet/sm:text-base">
           Espacios especializados para creativos de todo tipo, donde puedes
           gestironar tus proyectos y creacioón de contenido.
         </p>
       </div>
 
       <img
-        class="col-start-2 row-start-2"
+        class="col-start-2 row-start-2 tablet/sm:w-[80%] laptop/sm:w-[50%]"
         src="/enterprise-hero.png"
         alt="startups"
       />
       <div class="col-start-1 flex flex-col gap-2">
-        <h2 class="text-2xl font-inter font-bold text-black-text text-center">
+        <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
           Proyectos personales
         </h2>
-        <p class="font-inter font-semibold text-xs">
+        <p class="font-inter font-semibold text-xs text-center tablet/sm:text-base">
           Aprende a llevar todos tus proyectos personales en un solo lugar, deja
           de pensar tanto y usa Notion.
         </p>
       </div>
 
-      <img class="col-start-1" src="/teams-hero.png" alt="startups" />
+      <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%]" src="/teams-hero.png" alt="startups" />
       <div class="col-start-2 flex flex-col gap-2">
-        <h2 class="text-2xl font-inter font-bold text-black-text text-center">
+        <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
           Inteligencia artificial
         </h2>
-        <p class="font-inter font-semibold text-xs">
+        <p class="font-inter font-semibold text-xs text-center tablet/sm:text-base">
           Trabaja más rápido y escribe mejor. Más conocimiento, ideas y
           respuestas a un solo click de distancia.
         </p>
@@ -144,7 +160,7 @@ import Rating from "../components/Rating.astro";
           <span class="text-gray-700 font-medium text-sm text-center"
             >Diseñador Gráfico, director creativo de <a
               class="underline underline-offset-1"
-              href="">Nativo Studio</a
+              href="https://www.instagram.com/nativo.studio/">Nativo Studio</a
             > y Embajador de Notion en Venezuela.</span
           >
         </div>
@@ -152,7 +168,7 @@ import Rating from "../components/Rating.astro";
         <img
           src="/paper-airplane.png"
           alt="paper airplane"
-          class="w-1/2 mx-auto"
+          class="w-1/2 mx-auto tablet/sm:w-[80%] laptop/sm:w-[20%]"
         />
       </div>
     </div>

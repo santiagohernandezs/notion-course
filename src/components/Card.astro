@@ -2,24 +2,30 @@
 import cx from "../utils/cx";
 
 interface Props {
+  title: string;
   text: string;
   className?: string;
 }
 
-const { text, className } = Astro.props;
+const { text, title,className } = Astro.props;
 
 const styles = {
-  icon: cx("p-2 rounded-2xl"),
+  icon: cx("p-2 rounded-2xl")
 } as any;
 ---
 
 <div
-  class="flex flex-col justify-center gap-2 items-center border border-gray-300 rounded-3xl shadow-md py-5 px-2"
+  class="flex flex-col justify-center gap-2 items-center border max-h-[160px] aspect-square border-gray-300 rounded-3xl text shadow-md py-5 px-2 w-full tablet/sm:h-[80%] tablet/sm:p-4 tablet/sm:w-[90%]"
 >
-  <div class={`${styles.icon} ${className}`}>
-    <slot />
+  <div class="flex flex-col gap-2 items-center tablet/sm:w-full tablet/sm:flex-row">
+    <div class={`${styles.icon} ${className}`}>
+      <slot />
+    </div>
+    <h3 class="font-semibold text-black-text text-2xl">
+      {title}
+    </h3>
   </div>
-  <span class="text-center text-sm font-medium font-inter flex-grow">
+  <span class="text-sm font-normal font-inter hidden md:block w-full">
     {text}
   </span>
 </div>
