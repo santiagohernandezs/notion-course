@@ -1,17 +1,33 @@
 ---
+import cx from '../utils/cx';
 interface Props {
-  title: string;
   href: string;
+  size?: 'sm' | 'md' | 'lg';
 }
 
-const { href, title } = Astro.props;
+const { href, size } = Astro.props;
+
+const sizes = {
+  sm: 'text-sm',
+  md: 'text-base',
+  lg: 'text-lg',
+} as const
+
+const styles = {
+  button: cx(
+    'flex items-center justify-center bg-black-text text-white font-semibold px-3 py-1 rounded-lg font-inter gap-1 shadow-md text-md',
+    sizes[(size as keyof typeof sizes)] ?? sizes.md,
+  ),
+}
 ---
 
 <a
   href={href}
-  class="flex items-center justify-center bg-black-text text-white font-semibold px-3 py-1 rounded-lg font-inter gap-1 shadow-md tablet/sm:text-lg"
+  class={styles.button}
 >
   <slot name="left" />
-  {title}
+  <slot>
+    Button
+  </slot>
   <slot name="right" />
 </a>

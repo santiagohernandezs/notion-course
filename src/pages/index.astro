@@ -2,33 +2,27 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import Arrow from "../components/icons/Arrow.astro";
-import Menu from "../components/icons/Menu.astro";
-import Navbar from "../components/Navbar.astro";
-import Cube from "../components/icons/Cube.astro";
-import Card from "../components/Card.astro";
 import Users from "../components/Users.astro";
-import Accsesible from "../components/icons/Accsesible.astro";
-import CreditCard from "../components/icons/CreditCard.astro";
-import Book from "../components/icons/Book.astro";
 import Rating from "../components/Rating.astro";
 import Arrows from "../components/icons/Arrows.astro";
+import Carrousel from "../components/Carrousel";
 ---
 
 <Layout title="Notion desde Cero.">
-  <header class="flex justify-between items-center px-4 py-4 tablet/sm:px-10 laptop/lg:px-96">
+  <header class="flex justify-between items-center px-4 py-4 tablet/sm:px-10 laptop/lg:px-[550px]">
     <div class="flex gap-2 items-center">
       <img src="/notion.svg" alt="notion icon" width="32" />
       <span class="font-semibold text-black-text font-inter"
         >Notion Venezuela</span
       >
     </div>
-    <button id="menu">
-      <Menu class="" />
-    </button>
-    <!-- <Navbar /> -->
+
+    <Button href="#" size="md">
+      Entrar
+    </Button>
   </header>
 
-  <main class="flex flex-col gap-14 py-7 relative h-auto px-4 tablet/sm:px-10 laptop/sm:px-72 laptop/lg:px-96">
+  <main class="flex flex-col gap-14 py-7 relative h-auto px-4 tablet/sm:px-10 laptop/sm:px-72 laptop/lg:px-[550px]">
     <!-- Initial Hero -->
     <div class="flex flex-col items-center gap-4">
       <img src="/notion.svg" alt="notion icon" class="w-14 tablet/sm:w-20" />
@@ -43,8 +37,8 @@ import Arrows from "../components/icons/Arrows.astro";
           >Aprende a usar Notion para organizar tu vida y trabajo.</span
         >
       </div>
-      <Button title="Ver lecciones" href="#">
-        <Arrow slot="right" />
+      <Button href="#" size="lg">
+        <Arrow slot="right"/>
          Ver lecciones
       </Button>
     </div>
@@ -63,7 +57,7 @@ import Arrows from "../components/icons/Arrows.astro";
     <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl laptop/sm:w-10/12 mx-auto">
       Ayudando a contruir nuevas habilidades y experiencias.
     </h2>
-    <div class="flex flex-col gap-8 tablet/sm:gap-6 bg-[#f6f5f4] p-6 rounded-xl relative mt-16">
+    <!-- <div class="flex flex-col gap-8 tablet/sm:gap-6 bg-[#f6f5f4] p-6 rounded-xl relative mt-16">
       <img class="absolute w-32 -top-20 right-10 tablet/sm:w-48 tablet/sm:-top-[124px] tablet/sm:right-10" src="/topPeekJ.png" alt="peek">
       <div class="flex flex-col gap-2">
         <Arrows />
@@ -76,11 +70,13 @@ import Arrows from "../components/icons/Arrows.astro";
       </div>
 
       <img class="rounded-lg border border-gray-200 shadow-sm" src="/hr.png" alt="notion page">
-    </div>
+    </div> -->
     
+    <Carrousel client:load/>
+
     <!-- Notion for x -->
-    <div class="grid grid-cols-2 items-center gap-x-2 gap-y-8 justify-items-center">
-      <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%]" src="/startups-hero.png" alt="startups" />
+    <div class="grid grid-cols-2 items-center gap-x-2 gap-y-28 justify-items-center">
+      <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%] laptop/lg:w-[70%]" src="/startups-hero.png" alt="startups" />
       <div class="col-start-2 row-start-1 flex flex-col gap-2">
         <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
           Notion para creativos
@@ -92,7 +88,7 @@ import Arrows from "../components/icons/Arrows.astro";
       </div>
 
       <img
-        class="col-start-2 row-start-2 tablet/sm:w-[80%] laptop/sm:w-[50%]"
+        class="col-start-2 row-start-2 tablet/sm:w-[80%] laptop/sm:w-[50%] laptop/lg:w-[70%]"
         src="/enterprise-hero.png"
         alt="startups"
       />
@@ -106,7 +102,7 @@ import Arrows from "../components/icons/Arrows.astro";
         </p>
       </div>
 
-      <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%]" src="/teams-hero.png" alt="startups" />
+      <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%] laptop/lg:w-[70%]" src="/teams-hero.png" alt="startups" />
       <div class="col-start-2 flex flex-col gap-2">
         <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
           Inteligencia artificial
