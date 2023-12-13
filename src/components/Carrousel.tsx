@@ -49,6 +49,7 @@ export default function Carrousel(): JSX.Element {
     <button
       className="font-inter gap-2 py-1 px-2 text-base text-black-text opacity-80 focus:bg-gray-300 hover:bg-gray-200 rounded-md cursor-pointer"
       onClick={() => handleClick(index)}
+      key={index}
     >
       {image.title}
     </button>
