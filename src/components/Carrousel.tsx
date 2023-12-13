@@ -26,20 +26,20 @@ const Arrows = () => {
     </svg>
   );
 };
-
+// switch 
 export default function Carrousel(): JSX.Element {
   const IMAGES: Data = [
     {
-      title: "Board",
-      image: "/hr.png",
+      title: "Dashboard",
+      image: "/Mesa_de_trabajo_1.png",
     },
     {
-      title: "Table",
-      image: "/design.png",
+      title: "Ideas",
+      image: "/Mesa_de_trabajo_2.png",
     },
     {
-      title: "List",
-      image: "/espacio-javier.png",
+      title: "Tareas",
+      image: "/Mesa_de_trabajo_3.png",
     },
   ];
   const [currentImage, setCurrentImage] = useState<number>(0);
@@ -75,7 +75,7 @@ export default function Carrousel(): JSX.Element {
       </div>
 
       <img
-        className="rounded-lg border border-gray-200 shadow-sm"
+        className="rounded-lg border border-gray-200 shadow-sm laptop/sm:min-h-[458px] laptop/sm:max-h-[458px]"
         src={IMAGES[currentImage].image}
         alt={`notion page ${currentImage}`}
       />

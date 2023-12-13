@@ -4,28 +4,14 @@ import Button from "../components/Button.astro";
 import Arrow from "../components/icons/Arrow.astro";
 import Users from "../components/Users.astro";
 import Rating from "../components/Rating.astro";
-import Arrows from "../components/icons/Arrows.astro";
 import Carrousel from "../components/Carrousel";
 ---
 
 <Layout title="Notion desde Cero.">
-  <header class="flex justify-between items-center px-4 py-4 tablet/sm:px-10 laptop/lg:px-[550px]">
-    <div class="flex gap-2 items-center">
-      <img src="/notion.svg" alt="notion icon" width="32" />
-      <span class="font-semibold text-black-text font-inter"
-        >Notion Venezuela</span
-      >
-    </div>
-
-    <Button href="#" size="md">
-      Entrar
-    </Button>
-  </header>
-
-  <main class="flex flex-col gap-14 py-7 relative h-auto px-4 tablet/sm:px-10 laptop/sm:px-72 laptop/lg:px-[550px]">
+  <main class="flex flex-col gap-14 py-7 relative h-auto px-4 tablet/sm:px-10 laptop/sm:px-72 laptop/lg:px-[500px]">
     <!-- Initial Hero -->
     <div class="flex flex-col items-center gap-4">
-      <img src="/notion.svg" alt="notion icon" class="w-14 tablet/sm:w-20" />
+      <img src="/notion.svg" width="20" height="20" alt="notion icon" class="w-14 tablet/sm:w-20" />
       <div class="flex flex-col items-center gap-2">
         <h1
           class="text-4xl font-bold text-black-text font-inter tablet/sm:text-5xl"
@@ -57,26 +43,12 @@ import Carrousel from "../components/Carrousel";
     <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl laptop/sm:w-10/12 mx-auto">
       Ayudando a contruir nuevas habilidades y experiencias.
     </h2>
-    <!-- <div class="flex flex-col gap-8 tablet/sm:gap-6 bg-[#f6f5f4] p-6 rounded-xl relative mt-16">
-      <img class="absolute w-32 -top-20 right-10 tablet/sm:w-48 tablet/sm:-top-[124px] tablet/sm:right-10" src="/topPeekJ.png" alt="peek">
-      <div class="flex flex-col gap-2">
-        <Arrows />
-        <div class="flex flex-col">
-          <h3 class="font-inter text-[#050505] font-semibold text-lg">Visualize, filter & sort any way you want</h3>
-          <span class="block font-inter text-black-text">
-            Show only tasks assigned to you, or items marked as urgent. Break down any project in the way that’s most helpful to you.
-          </span>
-        </div>
-      </div>
-
-      <img class="rounded-lg border border-gray-200 shadow-sm" src="/hr.png" alt="notion page">
-    </div> -->
     
     <Carrousel client:load/>
 
     <!-- Notion for x -->
     <div class="grid grid-cols-2 items-center gap-x-2 gap-y-28 justify-items-center">
-      <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%] laptop/lg:w-[70%]" src="/startups-hero.png" alt="startups" />
+      <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%] laptop/lg:w-[70%] bg-center" width="80" height="80" src="/startups-hero.png" alt="startups" />
       <div class="col-start-2 row-start-1 flex flex-col gap-2">
         <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
           Notion para creativos
@@ -88,6 +60,7 @@ import Carrousel from "../components/Carrousel";
       </div>
 
       <img
+      width="80" height="80"
         class="col-start-2 row-start-2 tablet/sm:w-[80%] laptop/sm:w-[50%] laptop/lg:w-[70%]"
         src="/enterprise-hero.png"
         alt="startups"
@@ -102,7 +75,7 @@ import Carrousel from "../components/Carrousel";
         </p>
       </div>
 
-      <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%] laptop/lg:w-[70%]" src="/teams-hero.png" alt="startups" />
+      <img class="col-start-1 tablet/sm:w-[80%] laptop/sm:w-[60%] laptop/lg:w-[70%]" width="80" height="80" src="/teams-hero.png" alt="startups" />
       <div class="col-start-2 flex flex-col gap-2">
         <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
           Inteligencia artificial
@@ -122,6 +95,7 @@ import Carrousel from "../components/Carrousel";
 
       <div class="flex flex-col items-center gap-8">
         <img
+          width="80" height="80"
           src="/javier-pic.jpg"
           alt="javier profile"
           class="w-24 rounded-full tablet/sm:w-32 hover:rotate-[10deg] transition-all duration-300"
@@ -143,6 +117,7 @@ import Carrousel from "../components/Carrousel";
         </div>
 
         <img
+          width="80" height="80"
           src="/paper-airplane.png"
           alt="paper airplane"
           class="w-1/2 mx-auto tablet/sm:w-[80%] laptop/sm:w-[20%]"
