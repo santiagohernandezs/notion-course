@@ -76,7 +76,7 @@ export default function Carrousel(): JSX.Element {
       </div>
 
       <img
-        className="rounded-lg border border-gray-200 shadow-sm laptop/sm:min-h-[458px] laptop/sm:max-h-[458px]"
+        className="rounded-lg border border-gray-200 shadow-sm laptop/sm:min-h-[458px]"
         src={IMAGES[currentImage].image}
         alt={`notion page ${currentImage}`}
       />
