@@ -1,87 +1,79 @@
 import { useState } from "react";
 
-type Data = {
-  title: string;
-  image: `/${string}.png` | `/${string}.jpg`;
-}[];
+const Card = ({ children }: { children: React.ReactNode }): JSX.Element => {
+  return (
+    <div className="relative flex flex-col items-center gap-8 rounded-xl bg-[#f6f5f4] px-6 py-8 tablet/sm:gap-12">
+      {children}
+    </div>
+  );
+};
 
-const Arrows = () => {
+const Chevron = (): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      className="w-1/2"
       viewBox="0 0 24 24"
       strokeWidth="2"
-      stroke="#0a85d1"
+      stroke="currentColor"
       fill="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M18 4l3 3l-3 3"></path>
-      <path d="M18 20l3 -3l-3 -3"></path>
-      <path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h5"></path>
-      <path d="M21 7h-5a4.978 4.978 0 0 0 -3 1m-4 8a4.984 4.984 0 0 1 -3 1h-3"></path>
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M15 6l-6 6l6 6" />
     </svg>
   );
 };
-// switch 
-export default function Carrousel(): JSX.Element {
-  const IMAGES: Data = [
-    {
-      title: "Dashboard",
-      image: "/Mesa_de_trabajo_1.png",
-    },
-    {
-      title: "Ideas",
-      image: "/Mesa_de_trabajo_2.png",
-    },
-    {
-      title: "Tareas",
-      image: "/Mesa_de_trabajo_3.png",
-    },
-  ];
-  const [currentImage, setCurrentImage] = useState<number>(0);
-  const handleClick = (index: number) => setCurrentImage(index);
 
-  const buttons = IMAGES.map((image, index) => (
-    <button
-      className="font-inter gap-2 py-1 px-2 text-base text-black-text opacity-80 focus:bg-gray-300 hover:bg-gray-200 rounded-md cursor-pointer"
-      onClick={() => handleClick(index)}
-      key={index}
-    >
-      {image.title}
-    </button>
-  ));
+type Data = (`${string}.jpg` | `${string}.png` | `${string}.webp`)[];
+
+export default function Carrousel(): JSX.Element {
+  const IMAGES: Data = ["javier-expo.webp", "javier-expo-2.webp"];
+  const [currentImage, setCurrentImage] = useState<number>(0);
+
+  const nextImage = () =>
+    currentImage === IMAGES.length - 1
+      ? setCurrentImage(0)
+      : setCurrentImage(currentImage + 1);
+      
+  const prevImage = () =>
+    currentImage === 0
+      ? setCurrentImage(IMAGES.length - 1)
+      : setCurrentImage(currentImage - 1);
 
   return (
-    <div className="flex flex-col gap-8 tablet/sm:gap-6 bg-[#f6f5f4] p-6 rounded-xl relative mt-16">
-      <img
-        className="absolute w-32 -top-20 right-10 tablet/sm:w-48 tablet/sm:-top-[124px] tablet/sm:right-10"
-        src="/topPeekJ.png"
-        alt="peek"
-      />
-      <div className="flex flex-col gap-2">
-        <Arrows />
-        <div className="flex flex-col">
-          <h3 className="font-inter text-[#050505] font-semibold text-lg">
-            Visualize, filter & sort any way you want
-          </h3>
-          <span className="block font-inter text-black-text">
-            Show only tasks assigned to you, or items marked as urgent. Break
-            down any project in the way that’s most helpful to you.
-          </span>
-        </div>
+    <Card>
+      <div className="relative">
+        <button
+          onClick={prevImage}
+          className="absolute bg-gray-200 rounded-full w-[10%] aspect-square top-1/2 left-2 flex justify-center items-center"
+        >
+          <Chevron />
+        </button>
+        <button
+          onClick={nextImage}
+          className="absolute rounded-full flex justify-center items-center top-1/2 right-2 w-[10%] aspect-square bg-gray-300 rotate-180"
+        >
+          <Chevron />
+        </button>
+        <img
+          className="justify-self-center w-full"
+          src={`${IMAGES[currentImage]}`}
+          alt=""
+        />
       </div>
 
-      <img
-        className="rounded-lg border border-gray-200 shadow-sm laptop/sm:min-h-[458px]"
-        src={IMAGES[currentImage].image}
-        alt={`notion page ${currentImage}`}
-      />
-
-      <div className="flex items-center justify-center gap-4">{buttons}</div>
-    </div>
+      <div className="flex gap-2">
+        {IMAGES.map((image, index) => (
+          <div
+            key={index}
+            className={`w-2 h-2 rounded-full ${
+              index === currentImage ? "bg-gray-500" : "bg-gray-300"
+            }`}
+          ></div>
+        ))}
+      </div>
+    </Card>
   );
 }

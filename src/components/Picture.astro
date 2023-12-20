@@ -1,0 +1,17 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  mediaQueries: {
+    src: string;
+    media: string;
+  }[];
+}
+
+const { alt, mediaQueries, src } = Astro.props;
+---
+
+<picture>
+  {mediaQueries.map((mq) => <source srcset={mq.src} media={mq.media} />)}
+  <img src={src} alt={alt} />
+</picture>

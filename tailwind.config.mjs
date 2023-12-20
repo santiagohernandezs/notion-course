@@ -8,12 +8,16 @@ export default {
           default: "#000000",
           text: "#121212",
         },
+        blue: {
+          link: "#1b95e0",
+        },
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
       },
       content: {
         link: 'url("/link.svg")',
+        badge: 'url("/badge.png")',
       },
       screens: {
         "mobile/sm": "375px",

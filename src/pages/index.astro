@@ -1,38 +1,50 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
-import Arrow from "../components/icons/Arrow.astro";
-import Users from "../components/Users.astro";
-import Rating from "../components/Rating.astro";
+import Card from "../components/Card.astro";
 import Carrousel from "../components/Carrousel";
+import Rating from "../components/Rating.astro";
+import Switcher from "../components/Switcher";
+import Users from "../components/Users.astro";
+import Arrow from "../components/icons/Arrow.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Notion desde Cero.">
-  <main class="flex flex-col gap-14 py-7 relative h-auto px-4 tablet/sm:px-10 laptop/sm:px-72 laptop/lg:px-[350px]">
+  <main
+    class="relative flex h-auto flex-col gap-14 px-4 py-7 tablet/sm:gap-20 tablet/sm:px-10 laptop/sm:px-72 laptop/lg:px-[350px]"
+  >
     <!-- Initial Hero -->
     <div class="flex flex-col items-center gap-4">
-      <img src="/notion.svg" width="20" height="20" alt="notion icon" class="w-14 tablet/sm:w-20" />
+      <img
+        src="/notion.svg"
+        width="20"
+        height="20"
+        alt="notion icon"
+        class="w-14 tablet/sm:w-20"
+      />
       <div class="flex flex-col items-center gap-2">
         <h1
-          class="text-4xl font-bold text-black-text font-inter tablet/sm:text-5xl"
+          class="font-inter text-2xl mobile/md:text-3xl text-center font-bold text-black-text tablet/sm:text-5xl"
         >
-          Notion desde cero
+          Organiza tu etorno en un solo lugar
         </h1>
         <span
-          class="text-md text-center w-11/12 font-medium text-black-text opacity-95 leading-5 font-inter tablet/sm:text-lg"
-          >Aprende a usar Notion para organizar tu vida y trabajo.</span
+          class="text-md w-11/12 text-center font-inter font-medium leading-5 text-black-text opacity-95 tablet/sm:text-lg"
+          >
+          Aprende a usar notion en pocos pasos y eleva tu productividad 
+          </span
         >
       </div>
       <Button href="#" size="lg">
-        <Arrow slot="right"/>
-         Ver lecciones
+        <Arrow slot="right" />
+         Comenzar a aprender
       </Button>
     </div>
 
     <!-- Users list -->
     <div class="flex flex-col items-center gap-2">
       <Users />
-      <span class="text-sm font-inter font-medium tablet/sm:text-base">
+      <span class="font-inter text-sm font-medium tablet/sm:text-base">
         + 42 personas están aprendiendo Notion.</span
       >
 
@@ -40,47 +52,76 @@ import Carrousel from "../components/Carrousel";
     </div>
 
     <!-- About -->
-    <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl laptop/sm:w-10/12 mx-auto">
+    <h2
+      class="mx-auto text-center font-inter text-2xl font-bold text-black-text tablet/sm:text-4xl laptop/sm:w-10/12"
+    >
       Ayudando a contruir nuevas habilidades y experiencias.
     </h2>
-    
-    <Carrousel client:load/>
+
+    <Switcher client:load />
 
     <!-- Notion for x -->
-    <div class="grid grid-cols-2 items-center gap-x-2 gap-y-28 justify-items-center">
-      <img class="col-start-1 w-full tablet/sm:w-[80%] laptop/sm:w-[60%] laptop/lg:w-[70%] bg-center" width="80" height="80" src="/startups-hero.png" alt="startups" />
+    <div
+      class="grid grid-cols-2 items-center justify-items-center gap-x-2 gap-y-28"
+    >
+      <img
+        class="col-start-1 w-full bg-center tablet/sm:w-[80%] laptop/sm:w-[60%] laptop/lg:w-[70%]"
+        width="80"
+        height="80"
+        src="/startups-hero.png"
+        alt="startups"
+      />
       <div class="col-start-2 row-start-1 flex flex-col gap-2">
-        <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
+        <h2
+          class="text-center font-inter text-2xl font-bold text-black-text tablet/sm:text-4xl"
+        >
           Notion para creativos
         </h2>
-        <p class="font-inter font-semibold text-xs text-center tablet/sm:text-base">
+        <p
+          class="text-center font-inter text-xs font-semibold tablet/sm:text-base"
+        >
           Espacios especializados para creativos de todo tipo, donde puedes
           gestironar tus proyectos y creacioón de contenido.
         </p>
       </div>
 
       <img
-      width="80" height="80"
+        width="80"
+        height="80"
         class="col-start-2 row-start-2 w-full tablet/sm:w-[80%] laptop/sm:w-[50%] laptop/lg:w-[70%]"
         src="/enterprise-hero.png"
         alt="startups"
       />
       <div class="col-start-1 flex flex-col gap-2">
-        <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
+        <h2
+          class="text-center font-inter text-2xl font-bold text-black-text tablet/sm:text-4xl"
+        >
           Proyectos personales
         </h2>
-        <p class="font-inter font-semibold text-xs text-center tablet/sm:text-base">
+        <p
+          class="text-center font-inter text-xs font-semibold tablet/sm:text-base"
+        >
           Aprende a llevar todos tus proyectos personales en un solo lugar, deja
           de pensar tanto y usa Notion.
         </p>
       </div>
 
-      <img class="col-start-1 w-full tablet/sm:w-[80%] laptop/sm:w-[60%] laptop/lg:w-[70%]" width="80" height="80" src="/teams-hero.png" alt="startups" />
+      <img
+        class="col-start-1 w-full tablet/sm:w-[80%] laptop/sm:w-[60%] laptop/lg:w-[70%]"
+        width="80"
+        height="80"
+        src="/teams-hero.png"
+        alt="startups"
+      />
       <div class="col-start-2 flex flex-col gap-2">
-        <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
+        <h2
+          class="text-center font-inter text-2xl font-bold text-black-text tablet/sm:text-4xl"
+        >
           Inteligencia artificial
         </h2>
-        <p class="font-inter font-semibold text-xs text-center tablet/sm:text-base">
+        <p
+          class="text-center font-inter text-xs font-semibold tablet/sm:text-base"
+        >
           Trabaja más rápido y escribe mejor. Más conocimiento, ideas y
           respuestas a un solo click de distancia.
         </p>
@@ -88,41 +129,64 @@ import Carrousel from "../components/Carrousel";
     </div>
 
     <!-- About instructor -->
-    <div class="flex flex-col gap-4">
-      <h2 class="text-2xl font-inter font-bold text-black-text text-center tablet/sm:text-4xl">
-        Conoce a tu instructor
-      </h2>
+    <h2
+      class="text-center font-inter text-2xl font-bold text-black-text tablet/sm:text-4xl"
+    >
+      Conoce a tu instructor
+    </h2>
 
-      <div class="flex flex-col items-center gap-8">
-        <img
-          width="80" height="80"
-          src="/javier-pic.jpg"
-          alt="javier profile"
-          class="w-24 rounded-full tablet/sm:w-32 hover:rotate-[10deg] transition-all duration-300"
-        />
-        <div class="flex flex-col gap-2 items-center">
+    <div class="grid grid-cols-1 gap-4 tablet/md:grid-cols-2">
+      
+      <Card>
+        <div class="relative w-1/3 flex justify-center">
+          <img
+            width="80"
+            height="80"
+            src="/javier-pic.jpg"
+            alt="javier profile"
+            class="w-24 rounded-full transition-all duration-300 hover:rotate-[10deg] tablet/sm:w-32 laptop/sm:w-36"
+          />
+          <img
+            class="absolute -bottom-4 -right-[20%] -rotate-12 border-2 tablet/sm:w-36 tablet/sm:right-0 tablet/md:-right-[25%]  border-black-default rounded-lg"
+            src="/badge.png"
+            alt="badge"
+          />
+        </div>
+        <div class="flex flex-col items-center gap-2">
           <a
-            class="text-3xl font-inter relative font-bold text-black-text text-center after:content-link after:absolute after:-right-5 after:-top-3
-          after:text-black-text"
+            class="relative text-center font-inter text-2xl mobile/md:text-3xl font-bold text-black-text after:absolute after:-right-5 after:-top-3 after:text-black-text after:content-link"
             href="https://www.instagram.com/javierrodriguez17/"
           >
             Javier Rodriguez
           </a>
-          <span class="text-black-text font-medium text-sm text-center tablet/sm:text-xl"
-            >Diseñador Gráfico, director creativo de <a
-              class="underline underline-offset-1"
+          <span
+            class="text-center text-sm font-medium text-black-text tablet/sm:text-base"
+            >Diseñador Gráfico, director creativo de
+            <a
+              class="text-blue-link underline underline-offset-1"
               href="https://www.instagram.com/nativo.studio/">Nativo Studio</a
-            > y Embajador de Notion en Venezuela.</span
+            >
+             y Embajador de
+            <a
+              class="text-blue-link underline underline-offset-1"
+              href="https://www.instagram.com/notion.venezuela/"
+              >Notion en Venezuela</a
+            >.</span
           >
         </div>
+        <div class="flex justify-center gap-2">
+          {['#Venezuela', '#Notion', '#Digital Creator'].map((hash, i) => (
+          <span
+            class="cursor-pointer flex items-center justify-center text-xs rounded-md border border-black-default border-opacity-20 px-2 py-1 font-inter tablet/sm:text-sm font-medium text-black-text"
+          >
+            {hash}
+          </span>
+          ))}
+        </div>
+      </Card>
 
-        <img
-          width="80" height="80"
-          src="/paper-airplane.png"
-          alt="paper airplane"
-          class="w-1/2 mx-auto tablet/sm:w-[80%] laptop/sm:w-[20%]"
-        />
-      </div>
+      <Carrousel client:visible />
+
     </div>
   </main>
 </Layout>

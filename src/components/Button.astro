@@ -1,5 +1,4 @@
 ---
-import cx from '../utils/cx';
 interface Props {
   href: string;
   size?: 'sm' | 'md' | 'lg';
@@ -13,17 +12,15 @@ const sizes = {
   lg: 'text-lg',
 } as const
 
-const styles = {
-  button: cx(
-    'flex items-center justify-center bg-black-text text-white font-semibold px-3 py-1 rounded-lg font-inter gap-1 shadow-md text-md',
-    sizes[(size as keyof typeof sizes)] ?? sizes.md,
-  ),
-}
 ---
 
 <a
   href={href}
-  class={styles.button}
+  class:list={[
+    'flex items-center justify-center bg-black-text text-white font-semibold px-3 py-1 rounded-lg font-inter gap-1 shadow-md text-md',
+    sizes[(size as keyof typeof sizes)] ?? sizes.md,
+  ]}
+  
 >
   <slot name="left" />
   <slot>
