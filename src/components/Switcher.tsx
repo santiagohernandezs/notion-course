@@ -2,7 +2,7 @@ import { useState } from "react";
 
 type Data = {
   title: string;
-  image: `/${string}.png` | `/${string}.jpg`;
+  image: `/${string}.webp`;
 }[];
 
 const Arrows = () => {
@@ -31,15 +31,15 @@ export default function Switcher(): JSX.Element {
   const IMAGES: Data = [
     {
       title: "Dashboard",
-      image: "/Mesa_de_trabajo_1.png",
+      image: "/Mesa_de_trabajo_1.webp",
     },
     {
       title: "Ideas",
-      image: "/Mesa_de_trabajo_2.png",
+      image: "/Mesa_de_trabajo_2.webp",
     },
     {
       title: "Tareas",
-      image: "/Mesa_de_trabajo_3.png",
+      image: "/Mesa_de_trabajo_3.webp",
     },
   ] as const;
   const [currentImage, setCurrentImage] = useState<number>(0);
@@ -61,7 +61,7 @@ export default function Switcher(): JSX.Element {
     <div className="flex flex-col gap-8 tablet/sm:gap-6 bg-[#f6f5f4] p-6 rounded-xl relative mt-16">
       <img
         className="absolute w-32 -top-20 right-10 tablet/sm:w-48 tablet/sm:-top-[124px] tablet/sm:right-10"
-        src="/topPeekJ.png"
+        src="/topPeekJ.webp"
         alt="peek"
       />
       <div className="flex flex-col gap-2">

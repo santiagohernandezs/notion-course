@@ -26,7 +26,7 @@ const Chevron = (): JSX.Element => {
   );
 };
 
-type Data = (`${string}.jpg` | `${string}.png` | `${string}.webp`)[];
+type Data = `${string}.webp`[];
 
 export default function Carrousel(): JSX.Element {
   const IMAGES: Data = ["javier-expo.webp", "javier-expo-2.webp"];
