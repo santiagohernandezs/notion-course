@@ -48,10 +48,14 @@ export default function Carrousel(): JSX.Element {
         <button
           onClick={prevImage}
           className="absolute bg-gray-200 rounded-full w-[10%] aspect-square top-1/2 left-2 flex justify-center items-center"
+          title="prev"
+          aria-label="prev"
         >
           <Chevron />
         </button>
         <button
+          title="next"
+          aria-label="next"
           onClick={nextImage}
           className="absolute rounded-full flex justify-center items-center top-1/2 right-2 w-[10%] aspect-square bg-gray-300 rotate-180"
         >

@@ -11,6 +11,9 @@ export default {
         blue: {
           link: "#1b95e0",
         },
+        marron: {
+          default: "#c22424",
+        },
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
