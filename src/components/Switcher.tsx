@@ -1,47 +1,8 @@
 import { useState } from "react";
-
-type Data = {
-  title: string;
-  image: `/${string}.webp`;
-}[];
-
-const Arrows = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
-      viewBox="0 0 24 24"
-      strokeWidth="2"
-      stroke="#0a85d1"
-      fill="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M18 4l3 3l-3 3"></path>
-      <path d="M18 20l3 -3l-3 -3"></path>
-      <path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h5"></path>
-      <path d="M21 7h-5a4.978 4.978 0 0 0 -3 1m-4 8a4.984 4.984 0 0 1 -3 1h-3"></path>
-    </svg>
-  );
-};
+import { IMAGES } from "../data/Switcher";
+import Arrows from "./Arrow";
 
 export default function Switcher(): JSX.Element {
-  const IMAGES: Data = [
-    {
-      title: "Dashboard",
-      image: "/Mesa_de_trabajo_1.webp",
-    },
-    {
-      title: "Ideas",
-      image: "/Mesa_de_trabajo_2.webp",
-    },
-    {
-      title: "Tareas",
-      image: "/Mesa_de_trabajo_3.webp",
-    },
-  ] as const;
   const [currentImage, setCurrentImage] = useState<number>(0);
   const handleClick = (index: number) => setCurrentImage(index);
 
@@ -77,13 +38,16 @@ export default function Switcher(): JSX.Element {
         </div>
       </div>
 
-      <img
-        height={100}
-        width={100}
-        className="rounded-lg border border-gray-200 shadow-sm w-full h-full laptop/sm:min-h-[458px]"
-        src={IMAGES[currentImage].image}
-        alt={`notion page ${currentImage}`}
-      />
+      <picture>
+        {IMAGES[currentImage].images.map((source: any, index: any) => (
+          <source key={index} srcSet={source.src} media={source.media} />
+        ))}
+        <img
+          className="rounded-lg border border-gray-200 shadow-sm w-full h-full laptop/sm:min-h-[458px]"
+          src={IMAGES[currentImage].default}
+          alt={`notion page ${currentImage}`}
+        />
+      </picture>
 
       <div className="flex items-center justify-center gap-4">{buttons}</div>
     </div>
