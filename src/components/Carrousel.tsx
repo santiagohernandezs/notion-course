@@ -18,8 +18,8 @@ const Chevron = (): JSX.Element => {
       strokeWidth="2"
       stroke="currentColor"
       fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M15 6l-6 6l6 6" />
@@ -67,6 +67,8 @@ export default function Carrousel(): JSX.Element {
             <img
               className="rounded-lg border border-gray-200 shadow-sm w-full h-full laptop/sm:min-h-[458px]"
               src={IMAGES[currentImage].default}
+              width={1200}
+              height={800}
               alt={`notion page ${currentImage}`}
             />
           </picture>
