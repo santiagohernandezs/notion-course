@@ -1,0 +1,36 @@
+---
+import Button from '../components/Button.astro'
+import Rating from '../components/Rating.astro'
+import Section from '../components/Section.astro'
+import Users from '../components/Users.astro'
+import Arrow from '../components/icons/Arrow.astro'
+---
+
+<Section styles='flex flex-col gap-10'>
+	<div class='flex flex-col items-center gap-8' slot='content'>
+		<div class='flex flex-col items-center gap-4'>
+			<h1>
+				<img src='/LOGO-SIN-TAGLINE.webp' alt='InNotion' class='w-64 tablet/sm:w-[35rem] tablet/md:w-[40rem] drag-none' />
+			</h1>
+			<span class='w-full font-medium leading-5 text-center text-base font-inter text-black-text opacity-80 tablet/sm:text-2xl'>
+				Potencia tu creatividad, construye tu futuro.
+			</span>
+		</div>
+		<Button href='#' size='lg' text='white'>
+			<Arrow slot='right' />
+			Comenzar a aprender
+		</Button>
+	</div>
+
+	<!-- Users list -->
+	<div class='flex flex-col items-center gap-2'>
+		<Users />
+		<span class='text-sm font-medium font-inter tablet/sm:text-base'> + 42 personas están aprendiendo Notion.</span>
+		<Rating />
+	</div>
+
+	<!-- About -->
+	<h2 class='mx-auto text-2xl font-bold text-center font-inter text-black-text tablet/sm:text-4xl laptop/sm:w-10/12'>
+		Ayudando a contruir nuevas habilidades y experiencias.
+	</h2>
+</Section>

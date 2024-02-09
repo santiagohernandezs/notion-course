@@ -1,6 +1,6 @@
 ---
-import Button from '../components/Button.astro';
 import Meta from '../meta.astro';
+import Header from '../sections/Header.astro';
 interface Props {
   title: string;
 }
@@ -14,20 +14,8 @@ const { title } = Astro.props;
     <Meta title={title} />
   </head>
 
-  <body>
-    <header class="flex justify-between items-center px-4 py-4 tablet/sm:px-10 laptop/lg:px-[350px]">
-      <div class="flex gap-2 items-center">
-        <img src="/notion.svg" alt="notion icon" width="32" height='32'/>
-        <span class="font-semibold text-black-text font-inter"
-          >Notion Venezuela</span
-        >
-      </div>
-  
-      <Button href="#" size="md">
-        Entrar
-      </Button>
-    </header>
-
+  <body class='bg-white-snow'>
+    <Header />
     <slot />
   </body>
 </html>

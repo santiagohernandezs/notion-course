@@ -1,0 +1,30 @@
+---
+import Section from '../components/Section.astro'
+import Tile from '../components/Tile.astro'
+import Bot from '../components/icons/Bot.astro'
+import Brief from '../components/icons/Brief.astro'
+import Bulb from '../components/icons/Bulb.astro'
+---
+
+<Section>
+	<article class='flex flex-col gap-6 w-full tablet/md:flex-row h-auto' slot='content'>
+		<Tile
+			title='Notion para creativos'
+			description='Espacios especializados para creativos de todo tipo, donde puedes gestironar tus proyectos y creacioón de contenido.'
+		>
+			<Bulb slot='icon' />
+		</Tile>
+		<Tile
+			title='Proyectos personales'
+			description='Aprende a llevar todos tus proyectos personales en un solo lugar, deja de pensar tanto y usa Notion.'
+		>
+			<Brief slot='icon' />
+		</Tile>
+		<Tile
+			title='Inteligencia artificial'
+			description='Trabaja más rápido y escribe mejor. Más conocimiento, ideas y respuestas a un solo click de distancia.'
+		>
+			<Bot slot='icon' />
+		</Tile>
+	</article>
+</Section>

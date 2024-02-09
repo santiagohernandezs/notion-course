@@ -2,9 +2,10 @@
 interface Props {
   href: string;
   size?: 'sm' | 'md' | 'lg';
+  text: 'white' | 'black';
 }
 
-const { href, size } = Astro.props;
+const { href, size, text } = Astro.props;
 
 const sizes = {
   sm: 'text-sm',
@@ -17,10 +18,11 @@ const sizes = {
 <a
   href={href}
   class:list={[
-    'flex items-center justify-center bg-black-text text-white font-semibold px-3 py-1 rounded-lg font-inter gap-1 shadow-md text-md',
+    'flex items-center justify-center bg-[#5865F2] font-semibold px-3 py-1 rounded-lg font-inter gap-1 shadow-md text-md',
     sizes[(size as keyof typeof sizes)] ?? sizes.md,
+    text === 'white' ? 'text-white-snow' : 'text-black-text',
   ]}
-  
+
 >
   <slot name="left" />
   <slot>

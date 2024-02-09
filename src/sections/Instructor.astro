@@ -1,0 +1,52 @@
+---
+import Card from '../components/Card.astro'
+import Carrousel from '../components/Carrousel.tsx'
+import Section from '../components/Section.astro'
+---
+
+<Section styles='flex flex-col gap-10'>
+	<h2 class='text-3xl font-bold text-center font-inter mobile/md:text-4xl text-black-text' slot='title'>Conoce a tu instructor</h2>
+	<div class='grid grid-cols-1 gap-4 tablet/md:grid-cols-2' slot='content'>
+		<Card styles='flex flex-col items-center gap-8'>
+			<div class='relative flex justify-center w-1/3'>
+				<img
+					width='80'
+					height='80'
+					src='/javier-pic.webp'
+					alt='javier profile'
+					class='w-24 rounded-full transition-all duration-300 hover:rotate-[10deg] tablet/sm:w-32 laptop/sm:w-36'
+				/>
+				<img
+					class='absolute -bottom-4 -right-[20%] -rotate-12 border-2 tablet/sm:w-36 tablet/sm:right-0 tablet/md:-right-[25%] border-black-default rounded-lg'
+					src='/badge.webp'
+					alt='badge'
+				/>
+			</div>
+			<div class='flex flex-col items-center gap-2'>
+				<a
+					class='relative text-2xl font-bold text-center font-inter mobile/md:text-3xl text-black-text after:absolute after:-right-5 after:-top-3 after:text-black-text after:content-link'
+					href='https://www.instagram.com/javierrodriguez17/'
+				>
+					Javier Rodriguez
+				</a>
+				<span class='text-sm font-medium text-center text-black-text tablet/sm:text-base'
+					>Diseñador Gráfico, director creativo de
+					<a class='underline text-marron-default underline-offset-1' href='https://www.instagram.com/nativo.studio/'>Nativo Studio</a>
+					y Embajador de
+					<a class='underline text-marron-default underline-offset-1' href='https://www.instagram.com/notion.venezuela/'>Notion en Venezuela</a
+					>.</span
+				>
+			</div>
+			<div class='flex justify-center gap-2'>
+				{
+					['#Venezuela', '#Notion', '#Digital Creator'].map((hash, i) => (
+						<span class='flex items-center justify-center px-2 py-1 text-xs font-medium border rounded-md cursor-pointer border-black-default border-opacity-20 font-inter tablet/sm:text-sm text-black-text'>
+							{hash}
+						</span>
+					))
+				}
+			</div>
+		</Card>
+		<Carrousel client:visible />
+	</div>
+</Section>
