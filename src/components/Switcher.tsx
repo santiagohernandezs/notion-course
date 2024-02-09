@@ -21,7 +21,11 @@ export default function Switcher(): JSX.Element {
 
 	return (
 		<Card styles='flex flex-col tablet/sm:gap-6 p-6 mt-16'>
-			<img className='absolute w-32 -top-20 right-10 tablet/sm:w-48 tablet/sm:-top-[124px] tablet/sm:right-10' src='/topPeekJ.webp' alt='peek' />
+			<img
+				className='absolute w-32 -top-20 right-10 tablet/sm:w-48 tablet/sm:-top-[124px] tablet/sm:right-10'
+				src='/doodles/topPeekJ.webp'
+				alt='peek'
+			/>
 			<div className='flex flex-col gap-2'>
 				<Arrows />
 				<div className='flex flex-col'>

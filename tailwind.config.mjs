@@ -25,8 +25,8 @@ export default {
 				inter: ['Inter', 'sans-serif']
 			},
 			content: {
-				link: 'url("/link.svg")',
-				badge: 'url("/badge.png")'
+				link: 'url("/icons/link.svg")',
+				badge: 'url("/icons/badge.webp")'
 			},
 			screens: {
 				'mobile/sm': '375px',
