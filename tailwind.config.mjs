@@ -11,6 +11,7 @@ export default {
 					text: '#121212'
 				},
 				blue: {
+					discord: '#4D54E2',
 					link: '#1b95e0'
 				},
 				marron: {

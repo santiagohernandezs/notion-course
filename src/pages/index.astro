@@ -1,14 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Benefits from '../sections/Benefits.astro'
+import CTA from '../sections/Cta.astro'
 import Hero from '../sections/Hero.astro'
-import Instructor from '../sections/Instructor.astro'
 import More from '../sections/More.astro'
 import NotionForX from '../sections/NotionForX.astro'
 import Preview from '../sections/Preview.astro'
 ---
 
 <Layout title='InNotion'>
-	<main class='relative flex h-auto flex-col gap-14 px-4 py-16 tablet/sm:gap-20 tablet/sm:px-10 laptop/sm:px-72 tablet/sm:py-[100px] laptop/lg:px-[350px]'>
+	<main class='relative flex h-auto flex-col gap-14 px-4 py-16 tablet/sm:gap-20 tablet/sm:px-10 tablet/sm:py-[100px] laptop/sm:px-[200px] desktop/sm:px-[350px]'>
 		<!-- Initial Hero -->
 		<Hero />
 
@@ -21,7 +22,10 @@ import Preview from '../sections/Preview.astro'
 		<!-- More -->
 		<More />
 
-		<!-- About instructor -->
-		<Instructor />
+		<!-- Benefits -->
+		<Benefits />
+
+		<!-- CTA -->
+		<CTA />
 	</main>
 </Layout>
