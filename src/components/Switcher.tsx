@@ -14,6 +14,7 @@ export default function Switcher(): JSX.Element {
 			}`}
 			onClick={() => handleClick(index)}
 			key={index}
+			lang='en'
 		>
 			{image.title}
 		</button>
