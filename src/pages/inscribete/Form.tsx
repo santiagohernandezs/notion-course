@@ -60,7 +60,7 @@ export default function Form() {
 					{isSubmitting ? 'Enviando...' : 'Enviar'}
 				</button>
 
-				{!isSubmitSuccessful && (
+				{isSubmitSuccessful && (
 					<p className='text-blue-discord text-sm text-center tablet/sm:text-left font-semibold'>
 						¡Gracias por inscribirte! Te contactaremos pronto.
 					</p>
