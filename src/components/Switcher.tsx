@@ -30,9 +30,12 @@ export default function Switcher(): JSX.Element {
 			<div className='flex flex-col gap-2'>
 				<Arrows />
 				<div className='flex flex-col'>
-					<h3 className='font-inter text-[#050505] font-semibold text-lg'>Visualize, filter & sort any way you want</h3>
+					<h3 className='font-inter text-[#050505] font-semibold text-lg'>
+						Organiza, prioriza y personaliza
+					</h3>
 					<span className='block font-inter text-black-text'>
-						Show only tasks assigned to you, or items marked as urgent. Break down any project in the way that’s most helpful to you.
+						Contruye tus propias páginas con bloques de contenido, dales el formato que quieras y
+						organiza tu trabajo
 					</span>
 				</div>
 			</div>

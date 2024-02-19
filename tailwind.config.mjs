@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
@@ -38,6 +37,14 @@ export default {
 				'laptop/lg': '1440px',
 				'desktop/sm': '1600px',
 				'desktop/md': '1920px'
+			},
+			backgroundImage: {
+				user: 'url("./src/components/icons/user.svg")',
+				mail: 'url("./src/components/icons/mail.svg")',
+				phone: 'url("./src/components/icons/phone.svg")'
+			},
+			backgroundPosition: {
+				icon: 'center left 0.5rem'
 			}
 		}
 	},

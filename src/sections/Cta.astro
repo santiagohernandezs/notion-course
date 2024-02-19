@@ -1,5 +1,5 @@
 ---
-import Button from '../components/Button.astro'
+import Link from '../components/Link.astro'
 import Section from '../components/Section.astro'
 ---
 
@@ -7,12 +7,14 @@ import Section from '../components/Section.astro'
 	styles='w-full rounded-xl p-6 tablet/sm:p-24 bg-black-text h-auto gap-10 tablet/sm:gap-0 flex flex-col tablet/sm:flex-row justify-between tablet/sm:items-center'
 >
 	<div class='tablet/sm:w-[55%] flex flex-col gap-4'>
-		<h2 class='text-4xl font-bold text-white-snow font-inter text-balance'>Todo lo que necesitas en un solo lugar.</h2>
+		<h2 class='text-4xl font-bold text-white-snow font-inter text-balance'>
+			Todo lo que necesitas en un solo lugar.
+		</h2>
 		<span class='text-lg tablet/sm:text-xl text-white-snow font-normal font-inter'
 			>Desarrolla tus habilidades con notion y aprende a usarlo como un profesional.
 		</span>
 	</div>
-	<Button
+	<Link
 		text='white'
 		href='#'
 		size='xl'

@@ -1,26 +1,25 @@
 ---
-import Meta from '../meta.astro';
-import Header from '../sections/Header.astro';
+import Meta from '../meta.astro'
+import Header from '../sections/Header.astro'
 interface Props {
-  title: string;
+	title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="es">
-  <head>
-    <Meta title={title} />
-  </head>
+<html lang='es'>
+	<head>
+		<Meta title={title} />
+	</head>
 
-  <body class='bg-white-snow'>
-    <Header />
-    <slot />
-  </body>
+	<body class='bg-white-snow min-h-screen'>
+		<Header />
+		<slot />
+	</body>
 </html>
 
-
 <style is:global>
-  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto&display=swap");
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto&display=swap');
 </style>

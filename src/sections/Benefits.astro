@@ -1,10 +1,10 @@
 ---
-import Button from '../components/Button.astro'
+import Link from '../components/Link.astro'
 import Section from '../components/Section.astro'
 ---
 
-<Section styles='flex justify-between w-full laptop/lg:gap-10'>
-    <img src="/men.jpg" alt="" class='w-[40%] desktop/sm:w-5/12 hidden rounded-xl tablet/md:block'>
+<Section styles='flex justify-between w-full tablet/md:gap-10'>
+    <img src="/people/men-1200.webp" alt="" class='w-[40%] desktop/sm:w-5/12 hidden rounded-xl tablet/md:block'>
     <div class='w-full laptop/sm:p-10 desktop/sm:p-16 flex flex-col gap-8 justify-center '>
         <span class='font-inter font-semibold opacity-90 text-black-text'>Clases grupales a distancia</span>
         <h2 class='font-inter font-bold text-4xl tablet/sm:text-5xl text-black-text text-balance'>Se más productivo y destapa tu potencial</h2>
@@ -18,7 +18,7 @@ import Section from '../components/Section.astro'
             </p>
         </div>
 
-        <Button href='/sign-in' size='xl' text='white' styles='tablet/sm:w-1/3 p-24' content='Inscribete' aria-label='Comenzar a aprender y entra en el curso' />
+        <Link href='/sign-in' size='xl' text='white' styles='tablet/sm:w-1/3 p-24' content='Inscribete' aria-label='Comenzar a aprender y entra en el curso' />
 
     </div>
 </Section>
