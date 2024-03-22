@@ -31,6 +31,12 @@ export default function Form() {
 	} = methods
 
 	const styles = {
+		form: cx(
+			'flex flex-col w-[80%] tablet/sm:w-[50%] laptop/sm:w-1/4 h-auto rounded-xl gap-6 bg-white-default ring-1 p-7 ring-gray-200',
+			{
+				'ring-blue-discord ring-4': isSubmitSuccessful
+			}
+		),
 		button: cx(
 			'bg-black-text text-white-snow font-semibold rounded-lg font-inter gap-1 shadow-md text-base px-4 py-2',
 			{
@@ -43,29 +49,38 @@ export default function Form() {
 		const { error, status } = await sendData(data)
 
 		if (error) {
-			console.error(error)
-			return
+			console.error('Error:', error)
 		} else {
-			return reset()
+			reset()
 		}
 	}
 
 	return (
 		<FormProvider {...methods}>
-			<form className='flex flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
-				<Input name='name' placeholder='Nombre' icon='user' />
-				<Input name='email' placeholder='Email' icon='mail' />
-
-				<button disabled={isSubmitting} type='submit' className={styles.button}>
-					{isSubmitting ? 'Enviando...' : 'Enviar'}
-				</button>
-
-				{isSubmitSuccessful && (
-					<p className='text-blue-discord text-sm text-center tablet/sm:text-left font-semibold'>
-						¡Gracias por inscribirte! Te contactaremos pronto.
+			<div className={styles.form}>
+				<div className='flex flex-col gap-2 w-full'>
+					<h1 className='text-2xl font-bold text-center laptop/sm:text-3xl text-black-text'>
+						Inscríbete
+					</h1>
+					<p className='text-gray-500 text-center text-sm mobile/md:text-base'>
+						Regístrate para recibir información sobre nuestros productos y servicios
 					</p>
-				)}
-			</form>
+				</div>
+				<form className='flex flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
+					<Input helperText='Tu nombre completo' name='name' placeholder='Nombre' icon='user' />
+					<Input helperText='Tu correo electrónico' name='email' placeholder='Email' icon='mail' />
+
+					<button disabled={isSubmitting} type='submit' className={styles.button}>
+						{isSubmitting ? 'Enviando...' : 'Enviar'}
+					</button>
+
+					{isSubmitSuccessful && (
+						<p className='text-blue-discord text-sm mx-auto text-center tablet/sm:text-left font-semibold'>
+							¡Gracias por inscribirte! Te contactaremos pronto.
+						</p>
+					)}
+				</form>
+			</div>
 		</FormProvider>
 	)
 }

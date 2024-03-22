@@ -5,9 +5,10 @@ type Props = {
 	name: string
 	placeholder: string
 	icon: 'user' | 'mail'
+	helperText?: string
 }
 
-export default function Input({ name, placeholder, icon }: Props) {
+export default function Input({ name, placeholder, icon, helperText }: Props) {
 	const {
 		register,
 		formState: { errors, dirtyFields }
@@ -36,7 +37,7 @@ export default function Input({ name, placeholder, icon }: Props) {
 						{errors[name]?.message as string}
 					</span>
 				) : (
-					<span className='text-sm font-normal text-gray-500 opacity-80'>Tu nombre completo</span>
+					<span className='text-sm font-normal text-gray-500 opacity-80'>{helperText}</span>
 				)}
 			</span>
 		</div>

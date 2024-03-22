@@ -34,5 +34,8 @@ export default defineConfig({
 	adapter: vercel(),
 	redirects: {
 		'/in': '/inscribete'
+	},
+	devToolbar: {
+		enabled: false
 	}
 })

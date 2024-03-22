@@ -21,8 +21,7 @@ export const sendData = async (payload: Payload) => {
 	const name = upperCaseFistLetter(payload.name)
 	const email = formatMail(payload.email)
 
-	const { error, status } = await supabase.from('clients').insert([{ name, email }])
-
+	const { status, error } = await supabase.from('clients').insert([{ name, email }])
 	return { status, error }
 }
 

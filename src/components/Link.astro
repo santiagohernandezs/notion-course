@@ -1,16 +1,16 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from 'astro/types'
 
 interface Props extends HTMLAttributes<'a'> {
-  href: string;
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  text: 'white' | 'black';
-  type?: 'primary' | 'secondary';
-  styles?: string;
-  content: string;
+  href: string
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+  text?: 'white' | 'black' | 'blue'
+  type?: 'primary' | 'secondary' | 'phantom'
+  styles?: string
+  content: string
 }
 
-const { href, size, text, styles, type, content } = Astro.props;
+const { href, size, text, styles, type, content } = Astro.props
 
 const sizes = {
   sm: 'text-sm px-3 py-1',
@@ -19,26 +19,31 @@ const sizes = {
   xl: 'text-xl px-6 py-4'
 } as const
 
-const types = {
-  primary: 'bg-blue-discord',
-  secondary: 'bg-black-text'
+const texts = {
+  white: 'text-white-snow',
+  black: 'text-black-text',
+  blue: 'text-blue-discord'
 } as const
 
+const types = {
+  primary: 'bg-blue-discord',
+  secondary: 'bg-black-text',
+  phantom: 'bg-[#c2c5f9]'
+} as const
 ---
 
 <a
   role='link'
   href={href}
   class:list={[
-    styles,
     'flex items-center justify-center font-semibold rounded-lg font-inter gap-1 shadow-md text-md',
-    sizes[(size as keyof typeof sizes)] ?? sizes.md,
-    text === 'white' ? 'text-white-snow' : 'text-black-text',
-    types[(type as keyof typeof types)] ?? types.primary
+    sizes[size as keyof typeof sizes] ?? sizes.md,
+    texts[text as keyof typeof texts] ?? texts.black,
+    types[type as keyof typeof types] ?? types.primary,
+    styles
   ]}
 >
-  <slot name="left" />
-  { content }
-  <slot name="right" />
+  <slot name='left' />
+  {content}
+  <slot name='right' />
 </a>
-
