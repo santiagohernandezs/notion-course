@@ -7,25 +7,40 @@ import Arrow from '../components/icons/Arrow.astro'
 ---
 
 <Section styles='flex flex-col gap-14'>
-	<div class='flex flex-col items-center gap-8' >
+  <div class='flex flex-col items-center gap-8'>
+    <div class='flex flex-col items-center gap-4'>
+      <h1>
+        <img
+          src='/brand/LOGO-SIN-TAGLINE.webp'
+          alt='InNotion'
+          class='w-64 tablet/sm:w-[35rem] tablet/md:w-[40rem] drag-none'
+        />
+      </h1>
+      <span
+        class='w-full font-medium leading-5 text-center text-base font-inter text-black-text opacity-80 tablet/sm:text-2xl'
+      >
+        Potencia tu creatividad, construye tu futuro.
+      </span>
+    </div>
+    <Link
+      href='/inscribete'
+      size='lg'
+      text='white'
+      content='Comenzar a aprender'
+      aria-label='Comenzar a aprender y entra en el curso'
+      hreflang='es-ES'
+      styles={'transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#4D54E2] hover:shadow-xl hover:text-white-snow'}
+    >
+      <Arrow slot='right' />
+    </Link>
+  </div>
 
-		<div class='flex flex-col items-center gap-4'>
-			<h1>
-				<img src='/brand/LOGO-SIN-TAGLINE.webp' alt='InNotion' class='w-64 tablet/sm:w-[35rem] tablet/md:w-[40rem] drag-none' />
-			</h1>
-			<span class='w-full font-medium leading-5 text-center text-base font-inter text-black-text opacity-80 tablet/sm:text-2xl'>
-				Potencia tu creatividad, construye tu futuro.
-			</span>
-		</div>
-		<Link href='/inscribete' size='lg' text='white' content='Comenzar a aprender' aria-label='Comenzar a aprender y entra en el curso' hreflang='es-ES' styles={'transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#4D54E2] hover:shadow-xl hover:text-white-snow'}>
-			<Arrow slot='right' />
-		</Link>
-	</div>
-
-	<!-- Users list -->
-	<div class='flex flex-col items-center gap-2'>
-		<Users />
-		<span class='text-sm font-medium font-inter tablet/sm:text-base'> + 42 personas están aprendiendo Notion.</span>
-		<Rating />
-	</div>
+  <!-- Users list -->
+  <div class='flex flex-col items-center gap-2'>
+    <Users />
+    <span class='text-sm font-medium font-inter tablet/sm:text-base'>
+      + 42 personas están aprendiendo Notion.</span
+    >
+    <Rating />
+  </div>
 </Section>
