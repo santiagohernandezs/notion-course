@@ -1,24 +1,44 @@
 ---
-import Link from '../components/Link.astro';
-import Section from '../components/Section.astro';
+import Link from '../components/Link.astro'
+import Section from '../components/Section.astro'
 ---
 
-<Section styles='flex justify-between w-full gap-0 tablet/sm:gap-8'>
-    <img src="/people/men-1200.webp" alt="" class='tablet/sm:w-1/2 desktop/sm:w-[70%] hidden rounded-xl tablet/md:block'>
-    <div class='w-full laptop/sm:p-10 desktop/sm:p-16 flex flex-col gap-8 justify-center '>
-        <span class='font-inter font-semibold opacity-90 text-black-text'>Clases grupales a distancia</span>
-        <h2 class='font-inter font-bold text-4xl tablet/sm:text-5xl text-black-text text-balance'>Se más productivo y destapa tu potencial</h2>
+<Section styles='flex justify-between w-full tablet/md:gap-10'>
+  <img
+    src='/people/men-1200.webp'
+    alt=''
+    class='w-[40%] desktop/sm:w-5/12 hidden rounded-xl tablet/md:block laptop/sm:w-1/2'
+  />
+  <div class='w-full laptop/sm:p-10 desktop/sm:p-16 flex flex-col gap-8 justify-center'>
+    <span class='font-inter font-semibold opacity-90 text-black-text'
+      >Clases grupales a distancia</span
+    >
+    <h2 class='font-inter font-bold text-4xl tablet/sm:text-5xl text-black-text text-balance'>
+      Se más productivo y destapa tu potencial
+    </h2>
 
-        <div>
-            <p class='font-inter text-base tablet/sm:text-lg font-medium text-black-text text-pretty tablet/sm:w-11/12 mb-2'>
-                Aprender a usar notion y descubre todo el portencial que tiene para ti y la gran cantidad de herramientas que te ofrece.
-            </p>
-            <p class='font-inter text-base tablet/sm:text-lg font-medium text-black-text text-pretty tablet/sm:w-11/12'>
-                Cada clase es personalizada y se adapta a tus necesidades, ya sea que quieras aprender a usarlo para tu vida personal, para tu trabajo o para tu negocio.
-            </p>
-        </div>
-
-        <Link href='/inscribete' size='xl' text='white' styles='tablet/sm:w-1/3 p-24' content='Inscribete' aria-label='Comenzar a aprender y entra en el curso' />
-
+    <div>
+      <p
+        class='font-inter text-base tablet/sm:text-lg font-medium text-black-text text-pretty tablet/sm:w-11/12 mb-2'
+      >
+        Aprender a usar notion y descubre todo el portencial que tiene para ti y la gran cantidad de
+        herramientas que te ofrece.
+      </p>
+      <p
+        class='font-inter text-base tablet/sm:text-lg font-medium text-black-text text-pretty tablet/sm:w-11/12'
+      >
+        Cada clase es personalizada y se adapta a tus necesidades, ya sea que quieras aprender a
+        usarlo para tu vida personal, para tu trabajo o para tu negocio.
+      </p>
     </div>
+
+    <Link
+      href='/inscribete'
+      size='xl'
+      text='white'
+      styles='tablet/sm:w-1/3 p-24'
+      content='Inscribete'
+      aria-label='Comenzar a aprender y entra en el curso'
+    />
+  </div>
 </Section>

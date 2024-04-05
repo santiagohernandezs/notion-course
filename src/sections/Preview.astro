@@ -1,11 +1,11 @@
 ---
-import Section from '../components/Section.astro';
-import Switcher from '../components/Switcher';
+import Section from '../components/Section.astro'
 ---
 
-<Section styles='flex flex-col gap-10'>
-	<h2 class='mx-auto text-2xl font-bold text-center font-inter text-black-text tablet/sm:text-4xl laptop/sm:w-10/12' slot='title'>
-		Ayudando a construir nuevas habilidades y experiencias.
-	</h2>
-	<Switcher client:load slot='content' />
+<Section styles='flex gap-10'>
+  <picture>
+    <source srcset={'/notion-page/notion-page-1-500.webp'} media={'(max-width: 425px)'} />
+    <source srcset={'/notion-page/notion-page-1-800.webp'} media={'(max-width: 768px)'} />
+    <img class='rounded-xl shadow-xl' src='/notion-page/notion-page-1-1200.webp' alt='' />
+  </picture>
 </Section>
