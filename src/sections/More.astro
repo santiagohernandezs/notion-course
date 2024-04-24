@@ -1,39 +1,49 @@
 ---
-import Accsesbile from '../components/icons/Accsesible.astro';
-import Call from '../components/icons/Call.astro';
-import Patch from '../components/Patch.astro';
-import Section from '../components/Section.astro';
+import Accsesbile from '../components/icons/Accsesible.astro'
+import Call from '../components/icons/Call.astro'
+import Patch from '../components/Patch.astro'
+import Section from '../components/Section.astro'
 ---
 
 <Section>
-	<div
-		class='relative flex flex-col items-center tablet/sm:flex-row gap-6 laptop/sm:gap-12 rounded-xl bg-white-default px-6 py-8 tablet/sm:gap-8'
-		slot='content'
-	>
-		<img src='/mocks/tablet-800.webp' alt='' class='rounded-lg tablet/sm:hidden' />
-		<img src='/mocks/tablet-1200.webp' alt='' class='hidden w-full rounded-lg tablet/sm:block' />
-		<div class='laptop/sm:w-[70%] w-full flex flex-col gap-8'>
-			<h2
-				class='text-2xl font-bold text-center font-inter text-balance tablet/sm:text-2xl tablet/md:text-3xl tablet/md:text-left laptop/lg:text-4xl laptop/lg:gap-10'
-			>
-				Dale orden a tu vida y proyectos
-			</h2>
-			<div class='flex flex-col items-start gap-2'>
-				<Patch>
-					<Accsesbile slot='icon' />
-					<h3 slot='title' class='text-xl font-bold font-inter text-black-text block w-full'>Accesible</h3>
-					<p slot='content' class='text-sm font-medium font-inter text-black-text row-start-2 col-start-2'>
-						Con una interfaz amigable y fácil de usar.
-					</p>
-				</Patch>
-				<Patch>
-					<Call slot='icon' />
-					<h3 slot='title' class='text-xl font-bold font-inter text-black-text block w-full'>En vivo</h3>
-					<p slot='content' class='text-sm font-medium font-inter text-black-text row-start-2 col-start-2'>
-						Clases en vivo y grabadas para que puedas verlas cuando quieras.
-					</p>
-				</Patch>
-			</div>
-		</div>
-	</div>
+  <div
+    class='relative flex flex-col items-center tablet/sm:flex-row gap-6 laptop/sm:gap-12 rounded-xl bg-white-default px-6 py-8 tablet/sm:gap-8'
+    slot='content'
+  >
+    <img src='/mocks/tablet-800.webp' alt='' class='rounded-lg tablet/sm:hidden' />
+    <img src='/mocks/tablet-1200.webp' alt='' class='hidden w-7/12 rounded-lg tablet/sm:block' />
+    <div class='laptop/sm:w-[70%] w-full flex flex-col gap-8'>
+      <h2
+        class='text-2xl font-bold text-center font-inter text-balance tablet/sm:text-2xl tablet/md:text-3xl tablet/md:text-left laptop/lg:text-4xl laptop/lg:gap-10'
+      >
+        Dale orden a tu vida y proyectos
+      </h2>
+      <div class='flex flex-col items-start gap-2'>
+        <Patch>
+          <Accsesbile slot='icon' />
+          <h3 slot='title' class='text-xl font-bold font-inter text-black-text block w-full'>
+            Accesible
+          </h3>
+          <p
+            slot='content'
+            class='text-sm font-medium font-inter text-black-text row-start-2 col-start-2'
+          >
+            Con una interfaz amigable y fácil de usar.
+          </p>
+        </Patch>
+        <Patch>
+          <Call slot='icon' />
+          <h3 slot='title' class='text-xl font-bold font-inter text-black-text block w-full'>
+            En vivo
+          </h3>
+          <p
+            slot='content'
+            class='text-sm font-medium font-inter text-black-text row-start-2 col-start-2'
+          >
+            Clases en vivo y grabadas para que puedas verlas cuando quieras.
+          </p>
+        </Patch>
+      </div>
+    </div>
+  </div>
 </Section>
