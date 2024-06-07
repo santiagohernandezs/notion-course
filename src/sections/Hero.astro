@@ -6,7 +6,7 @@ import Users from '../components/Users.astro'
 import Arrow from '../components/icons/Arrow.astro'
 ---
 
-<Section styles='flex flex-col gap-14'>
+<Section styles='flex flex-col gap-14 mt-16 tablet/sm:mt-40'>
   <div class='flex flex-col items-center gap-8'>
     <div class='flex flex-col items-center gap-4'>
       <h1>
@@ -36,7 +36,12 @@ import Arrow from '../components/icons/Arrow.astro'
   </div>
 
   <!-- Users list -->
-  <div class='flex flex-col items-center gap-2'>
+  <div class='flex flex-col items-center gap-4'>
+    <a
+      class='text-black-text relative opacity-80 underline after:content-link after:absolute after:-right-5 text-center text-base font-inter font-medium'
+      href='htt://javierrodriguez17.notion.site/Temario-c48c7fef102a4941baa7bbc6547a350a?pvs=4'
+      >Ver el temario</a
+    >
     <Users />
     <span class='text-sm font-medium font-inter tablet/sm:text-base'>
       + 42 personas están aprendiendo Notion.</span

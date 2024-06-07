@@ -1,14 +1,12 @@
 ---
-import Link from '../components/Link.astro';
+import Link from '../components/Link.astro'
 ---
 
-<header
-  class='flex justify-between items-center px-4 py-4 tablet/sm:px-10 laptop laptop/lg:px-[350px]'
->
-  <div class='flex gap-2 items-center'>
+<header class='w-full flex justify-between items-center'>
+  <a href='/' class='flex gap-2 items-center'>
     <img src='/brand/notion.svg' alt='notion icon' width='32' height='32' />
     <span class='font-semibold text-black-text font-inter'>Notion Venezuela</span>
-  </div>
+  </a>
 
   <Link href='/inscribete' size='md' content='Inscríbete' text={'blue'} type={'phantom'} />
 </header>

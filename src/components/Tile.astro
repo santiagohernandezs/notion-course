@@ -1,18 +1,20 @@
 ---
 interface Props {
-	title: string
-	description: string
+  title: string
+  description: string
 }
 
 const { title, description } = Astro.props
 ---
 
-<article class='p-8 flex flex-col gap-20 justify-start bg-black-text rounded-xl w-full tablet/md:w-1/3'>
-	<slot name='icon' />
-	<div class='flex flex-col items-start gap-4'>
-		<h2 class='text-2xl font-bold font-inter text-white-snow'>{title}</h2>
-		<p class='text-xs font-medium opacity-90 text-white-snow font-inter tablet/sm:text-base'>
-			{description}
-		</p>
-	</div>
+<article
+  class='p-8 flex flex-col gap-20 justify-start bg-black-text rounded-xl w-full tablet/md:w-1/3 hover:-translate-y-3 hover:shadow-2xl transition-all duration-150 ease-in-out'
+>
+  <slot name='icon' />
+  <div class='flex flex-col items-start gap-4'>
+    <h2 class='text-2xl font-bold font-inter text-white-snow'>{title}</h2>
+    <p class='text-xs font-medium opacity-90 text-white-snow font-inter tablet/sm:text-base'>
+      {description}
+    </p>
+  </div>
 </article>
