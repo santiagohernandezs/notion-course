@@ -1,11 +1,10 @@
 import type { APIRoute } from 'astro'
 import { Resend } from 'resend'
 
-const resend = new Resend('re_bjzVB7qk_KdZtXmnY7CYgbiWPxiVk4AAw')
+const resend = new Resend(import.meta.env.PUBLIC_RESEND_KEY)
 
 export const POST: APIRoute = async ({ params, request }) => {
   const { to, from, html, subject, text } = await request.json()
-  console.info({ to, from, html, subject, text })
 
   if (!to || !from || !html || !subject || !text) {
     return new Response(
