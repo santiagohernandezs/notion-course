@@ -89,7 +89,6 @@ export default function Form() {
   }
 
   const onSubmit: SubmitHandler<Inputs> = async data => {
-    console.log('values', getValues())
     const { email, name } = getValues()
     const { errors, status } = await sendData(data)
 
