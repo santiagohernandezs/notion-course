@@ -90,11 +90,11 @@ export default function Form() {
 
   const onSubmit: SubmitHandler<Inputs> = async data => {
     const { email, name } = getValues()
-    const { errors, status } = await sendData(data)
+    const { status, errors, message } = await sendData(data)
 
-    if (errors && errors.email) {
+    if (errors && errors.includes('email')) {
       setError('email', {
-        message: errors.email
+        message: 'El correo ya está registrado'
       })
     } else if (status === 500) {
       setError('root', {
@@ -102,7 +102,7 @@ export default function Form() {
       })
     } else {
       reset()
-      sendEmail({ email, name })
+      // sendEmail({ email, name })
     }
   }
 

@@ -1,0 +1,47 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Clients {
+  id            String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name          String?         @db.VarChar(70)
+  email         String?         @unique @db.VarChar(100)
+  registeredAt  DateTime?       @default(dbgenerated("(now())::date")) @map("registered_at") @db.Date
+  subscriptions Subscriptions[]
+
+  @@map("clients")
+}
+
+model Courses {
+  id            String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name          String          @db.VarChar(70)
+  startDate     DateTime?       @default(dbgenerated("(now())::date")) @map("start_date") @db.Date
+  endDate       DateTime        @map("end_date") @db.Date
+  subscriptions Subscriptions[]
+
+  @@map("courses")
+}
+
+model Subscriptions {
+  id               String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  client_id        String   @db.Uuid
+  course_id        String   @db.Uuid
+  payment_approved Boolean? @default(false)
+  clients          Clients  @relation(fields: [client_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  courses          Courses  @relation(fields: [course_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@map("subscriptions")
+}
+
+view subscriptions_list_view {
+  id               String   @id @db.Uuid
+  client_name      String?  @db.VarChar(70)
+  course_name      String?  @db.VarChar(70)
+  payment_approved Boolean?
+}

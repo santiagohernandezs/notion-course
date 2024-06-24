@@ -1,10 +1,7 @@
-import { supabase } from '../lib/supabase'
-
-const upperCaseFistLetter = (word: string) => {
+const upperCaseFirstLetter = (word: string) => {
   const words = word.split(' ')
   const capitalizedWords = words.map(w => w.charAt(0).toUpperCase() + w.slice(1))
-  const result = capitalizedWords.join(' ')
-  return result
+  return capitalizedWords.join(' ')
 }
 
 const formatMail = (mail: string) => {
@@ -20,37 +17,25 @@ export type Payload = {
 type ApiResponse = {
   status: number
   message?: string
-  errors?: Partial<Payload>
+  errors?: Array<keyof Payload>
 }
 
 export const sendData = async (payload: Payload): Promise<ApiResponse> => {
-  const name = upperCaseFistLetter(payload.name)
+  const name = upperCaseFirstLetter(payload.name)
   const email = formatMail(payload.email)
 
-  const { data: isAlreadyRegistred, error: isAlreadyRegistredError } = await supabase
-    .from('clients')
-    .select('email')
-    .eq('email', email)
+  const response = await fetch('/api/sendFormData.json', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name, email })
+  })
+  const data = await response.json()
 
-  if (isAlreadyRegistred && isAlreadyRegistred.length > 0) {
-    return {
-      status: 409,
-      errors: { email: 'Este correo ya ha sido registrado' }
-    }
+  if (response.ok) {
+    return { status: response.status }
+  } else {
+    return { status: response.status, message: data.message, errors: [...data.meta.target] }
   }
-
-  if (isAlreadyRegistredError) {
-    return {
-      status: 500,
-      message: isAlreadyRegistredError.message
-    }
-  }
-
-  const { status, error } = await supabase.from('clients').insert([{ name, email }])
-
-  if (error) {
-    return { status: 500, message: 'Error al enviar el formulario' }
-  }
-
-  return { status, message: 'Formulario enviado con éxito' }
 }
